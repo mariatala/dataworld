@@ -3,7 +3,7 @@
 
 
 :root {
-	--dark: #212a31;
+	--dark: #161c21;
 	--less-dark: #2e3944;
 	--accent: #124e66;
 	--less-light: #4a5568;
@@ -18,8 +18,8 @@ html {
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--dark: #212a31
-		--light: #d3d9d4;
+		--dark: #151a1f;
+		--light: #d0d0d0;
 	}
 }
 
