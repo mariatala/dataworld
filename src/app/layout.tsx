@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Commissioner } from 'next/font/google';
 import './globals.css';
-import Header from '@/components/Header';
+import Header from '@/components/sections/Header';
 import Footer from '@/components/Footer';
 
 const comm = Commissioner({
@@ -23,9 +23,9 @@ export default function RootLayout({
 	return (
 		<html lang="en" style={{ scrollBehavior: 'smooth' }}>
 			<body className={`${comm.variable} antialiased`}>
-				<div className="container mx-auto">
+				<div className="">
 					{children}
-					<Footer />
+				
 				</div>
 			</body>
 		</html>
