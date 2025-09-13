@@ -1,6 +1,6 @@
 @import 'tailwindcss';
-
-
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
 
 :root {
 	--dark: #161c21;
@@ -16,6 +16,12 @@ html {
 }
 
 
+.button-teal-outline {
+	background-color: transparent;
+	color: var(--light);
+	border: 2px solid var(--light);
+}
+
 @media (prefers-color-scheme: dark) {
 	:root {
 		--dark: #151a1f;
@@ -24,8 +30,7 @@ html {
 }
 
 body {
-	background: var(--dark);
-	color: var(--light);
-	font-family: Arial, Helvetica, sans-serif;
+	background: var(--light);
+	color: var(--dark);
+	font-family: 'Cabin', Arial, Helvetica, sans-serif;
 }
-

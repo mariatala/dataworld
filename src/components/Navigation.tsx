@@ -41,17 +41,13 @@ export default function Navigation() {
 					</ul>
 				</nav>
 			</div>
-			<div className="flex gap-4">
+			<div className="flex gap-4 ">
 				<Link href="/register">
-					<button className="font-medium px-2 py-1 tracking-wider  hover:rounded-xs hover:bg-[var(--accent)]  transition-all duration-700 ease-in-out cursor-pointer ">
-						Get A Quote
+					<button className="button-teal button-data w-fit">
+						Book a strategy call
 					</button>
 				</Link>
-				<Link href="/login">
-					<button className="font-medium px-2 py-1 tracking-wider  hover:rounded-xs  hover:bg-[var(--accent)] transition-all duration-700 ease-in-out cursor-pointer">
-					Consultation
-					</button>
-				</Link>
+			
 			</div>{' '}
 		</div>
 	);

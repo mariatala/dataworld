@@ -1,14 +1,5 @@
 import type { Metadata } from 'next';
-import { Commissioner } from 'next/font/google';
 import './globals.css';
-import Header from '@/components/sections/Header';
-import Footer from '@/components/Footer';
-
-const comm = Commissioner({
-	variable: '--font-geist-sans',
-	subsets: ['latin'],
-	weight: ['100', '200', '300', '400'],
-});
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -22,11 +13,8 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" style={{ scrollBehavior: 'smooth' }}>
-			<body className={`${comm.variable} antialiased`}>
-				<div className="">
-					{children}
-				
-				</div>
+			<body className={` antialiased`}>
+				<div className="">{children}</div>
 			</body>
 		</html>
 	);

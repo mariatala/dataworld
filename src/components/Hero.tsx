@@ -1,18 +1,41 @@
-import { Archivo_Narrow } from "next/font/google";
-const archivoNarrow = Archivo_Narrow({ subsets: ["latin"] });
+import { Cormorant_Garamond } from 'next/font/google';
+import { Cabin } from 'next/font/google';
+
+
+const cormorant = Cormorant_Garamond({
+	subsets: ['latin'],
+	weight: ['300', '400', '500', '600', '700'],
+});
+const cabin = Cabin({
+	subsets: ['latin'],
+	weight: ['400', '500', '600', '700'],
+});
 
 export default function Hero() {
 	return (
-		<section className="mx-8 md:mx-12 lg:mx-16 h-9/12 flex flex-col gap-8 justify-center items-start text-center text-[var(--light)]">
-			<h1
-				className={`${archivoNarrow.className} font-semibold bg-clip-text text-transparent bg-[url('/bg_text.jpg')] text-left uppercase tracking-tight bg-cover bg-center bg-no-repeat
-					text-4xl sm:text-6xl md:text-7xl xl:text-9xl leading-none`}
-			>
-				Revolutionizing business success with data
-			</h1>
-			<p className="mt-4 font-light tracking-wider text-sm md:text-base text-left">
-				Empowering businesses with data-driven insights and innovative solutions.
-			</p>
+		<section className="mx-4 sm:mx-8 md:mx-12 lg:mx-16 flex justify-between h-10/12">
+			<div className="flex flex-col gap-8 justify-end p-4 pb-24 leading-tight text-left">
+				<h1 className={`${cormorant.className}  text-lg lg:text-6xl  tracking-normal`}>
+					{' '}
+					Revolutionizing business success with dataworld solutions.
+				</h1>
+				<div className="flex gap-4">
+					<button className="button-teal button-data w-fit">
+						Explore our services
+					</button>
+					<button className="button-teal-outline button-data w-fit">
+						Explore our services
+					</button>
+				</div>
+			</div>
+			<div className="w-full ">
+				<p className={`${cabin.className} mt-4 font-thin tracking-wide leading-loose text-base text-left`}>
+					Empowering businesses with data-driven insights and customized
+					solutions for successful strategic decision-making with our modern
+					amenities and client-focused philosophy. Discover the power of data
+					transformation with us.
+				</p>
+			</div>
 		</section>
 	);
 }
