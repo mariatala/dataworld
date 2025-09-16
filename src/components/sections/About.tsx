@@ -18,15 +18,15 @@ export default function About() {
 			className="mx-4 sm:mx-8 md:mx-12 lg:mx-16 my-24 flex flex-col justify-center items-center"
 		>
 			<div className=" w-2/3  flex flex-col gap-12 justify-center items-center">
-				<h2 className=" tracking-wider">Innovative</h2>
+				<h2 className=" tracking-wider text-[var(--accent)]">Innovative</h2>
 				<div className="flex flex-col justify-center items-center gap-6">
 					<h2
-						className={`${cormorant.className} text-lg sm:text-2xl lg:text-5xl font-thin text-center leading-none tracking-wide`}
+						className={`${cormorant.className} text-2xl lg:text-5xl font-semibold text-center leading-none tracking-wide`}
 					>
 						Transforming Data Management for Your Business
 					</h2>
 					<p
-						className={`${cabin.className} text-sm  text-center max-w-3xl font-thin leading-relaxed tracking-wider`}
+						className={`${cabin.className} text-sm  text-center max-w-3xl font-thin leading-relaxed tracking-wider text-[var(--less-light)]`}
 					>
 						At DataWorld, we understand that effective data management is
 						crucial for business success. Our comprehensive solutions are

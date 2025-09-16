@@ -1,63 +1,93 @@
-import { FaA, FaAnglesRight } from 'react-icons/fa6';
-import Image from 'next/image';
+import { Cormorant_Garamond, Cabin } from 'next/font/google';
+import { FaAngleRight } from 'react-icons/fa6';
+import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
+import Link from 'next/link';
 
-type team = {
-	name: string;
-	title: string;
-	image: string;
-};
-
-const teamMembers: team[] = [
-	{
-		name: 'Ubong Gregory Udofia',
-		title: 'Chief Technology Officer',
-		image: '/one.jpg',
-	},
-	{
-		name: 'Jane Doe',
-		title: 'Product Manager',
-		image: '/two.jpg',
-	},
-	{
-		name: 'John Smith',
-		title: 'Lead Developer',
-		image: '/four.jpg',
-	},
-];
+const cormorant = Cormorant_Garamond({
+	subsets: ['latin'],
+	weight: ['300', '400', '500', '600', '700'],
+});
+const cabin = Cabin({
+	subsets: ['latin'],
+	weight: ['400', '500', '600', '700'],
+});
 export default function Teams() {
 	return (
-		<section className="bg-slate-950 min-h-dvh w-full">
-			<div className="container mx-auto px-4 md:px-8 lg:px-16">
-				<h2 className="text-4xl font-bold text-center text-white pt-10">
-					Our Team <FaAnglesRight className="inline-block ml-2" />
-				</h2>
-				<p className="text-center text-gray-300 mt-4">
-					Meet the dedicated professionals behind DataWorld
-				</p>
-			</div>
-			<div className="container mx-auto px-4 md:px-8 lg:px-16 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16">
-				{teamMembers.map((member, index) => (
-					<div
-						key={index}
-						className="group relative h-[480px] bg-slate-800 overflow-hidden rounded-md border-2 border-slate-800"
-					>
-						<div className="absolute inset-0 bg-slate-950/35 group-hover:bg-slate-950/10 transition-colors duration-300 bg-blend-screen">
-							<Image
-								src={member.image}
-								alt={member.name}
-								width={400}
-								height={450}
-								priority
-								className="object-cover object-top w-full h-96  group-hover:scale-105 transition-transform duration-300"
-							/>
+		<section className=" bg-[var(--accent)] py-24 flex  flex-col justify-center items-center">
+			<div className="flex flex-col md:flex-row justify-between items-center">
+				<div className="flex flex-col text-left gap-8 text-[var(--light)]">
+					<h2 className="">Team</h2>
 
-							<div className="p-4 b text-center">
-								<h3 className="text-xl font-semibold">{member.name}</h3>
-								<p className="text-slate-600">{member.title}</p>
+					<h2
+						className={`${cormorant.className} text-2xl lg:text-5xl font-semibold leading-none tracking-wide`}
+					>
+						{' '}
+						Our Professional Team
+					</h2>
+					<p>
+						Visionary leader with 15 years of experience in enterprise data
+						solutions
+					</p>
+
+					<button className=" text-[var(--dark)] border-1 rounded-sm border-[var(--dark)] px-4 py-1 w-fit  hover:bg-[var(--dark)] hover:text-[var(--light)] transition-colors duration-500">
+						Open Position
+					</button>
+				</div>
+				<div className="mt-16 md:mt-0 flex flex-col gap-8 md:gap-4">
+					{[
+						{
+							name: 'Michael Chang',
+							position: 'CEO',
+							description:
+								'Technical expert specializing in cloud infrastructure and data security',
+							social_links: [
+								'https://linkedin.com/in/johndoe',
+								'https://github.com/johndoe',
+							],
+						},
+						{
+							name: 'Emily Rodriguez',
+							position: 'CTO',
+							description:
+								'Leading expert in advanced analytics and machine learning technologies',
+							social_links: [
+								'https://linkedin.com/in/janesmith',
+								'https://github.com/janesmith',
+							],
+						},
+						{
+							name: 'David Kim',
+							position: 'Chief Data Scientist',
+							description:
+								'Dedicated to delivering exceptional customer experiences and tailored strategies',
+							social_links: [
+								'https://linkedin.com/in/janesmith',
+								'https://github.com/janesmith',
+							],
+						},
+					].map((member, index) => (
+						<div key={index} className="flex flex-col">
+							<span className="font-semibold">{member.name}</span>
+							<span className="text-sm">{member.position}</span>
+							<p className="text-[var(--less-light)] text-sm">
+								{member.description}
+							</p>
+							<div className="flex gap-4 mt-2">
+								{member.social_links.map((link, linkIndex) => (
+									<a
+										key={linkIndex}
+										href={link}
+										className="text-[var(--light)] hover:underline"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										{link}
+									</a>
+								))}
 							</div>
 						</div>
-					</div>
-				))}
+					))}
+				</div>
 			</div>
 		</section>
 	);
