@@ -2,6 +2,7 @@ import { Cormorant_Garamond, Cabin } from 'next/font/google';
 import { FaAngleRight } from 'react-icons/fa6';
 import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const cormorant = Cormorant_Garamond({
 	subsets: ['latin'],
@@ -13,9 +14,9 @@ const cabin = Cabin({
 });
 export default function Teams() {
 	return (
-		<section className=" bg-[var(--accent)] py-24 flex  flex-col justify-center items-center">
-			<div className="flex flex-col md:flex-row justify-between items-center">
-				<div className="flex flex-col text-left gap-8 text-[var(--light)]">
+		<section className=" bg-[var(--accent)] py-16 h-dvh flex  flex-col justify-center items-center">
+			<div className="flex flex-col md:flex-row justify-between md:gap-8 lg:16 xl:24 items-center">
+				<div className="flex flex-col h-full justify-start items-start text-left gap-8 text-[var(--light)] pr-0 md:pr-8 lg:pr-24 px-8 md:px-16 pt-10">
 					<h2 className="">Team</h2>
 
 					<h2
@@ -33,57 +34,123 @@ export default function Teams() {
 						Open Position
 					</button>
 				</div>
-				<div className="mt-16 md:mt-0 flex flex-col gap-8 md:gap-4">
+				<div className="mt-16 md:mt-0 flex flex-col gap-8  md:gap-16 px-4 sm:px-8">
 					{[
 						{
+							image_url: '/team_one.jpg',
 							name: 'Michael Chang',
 							position: 'CEO',
 							description:
 								'Technical expert specializing in cloud infrastructure and data security',
 							social_links: [
-								'https://linkedin.com/in/johndoe',
-								'https://github.com/johndoe',
+								<Link
+									href="https://linkedin.com/in/johndoe"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<FaLinkedin />
+								</Link>,
+								<Link
+									href="https://github.com/johndoe"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<FaGithub />
+								</Link>,
+								<Link
+									href="https://github.com/johndoe"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<FaTwitter />
+								</Link>,
 							],
 						},
 						{
+							image_url: '/team_two.jpg',
 							name: 'Emily Rodriguez',
 							position: 'CTO',
 							description:
 								'Leading expert in advanced analytics and machine learning technologies',
 							social_links: [
-								'https://linkedin.com/in/janesmith',
-								'https://github.com/janesmith',
+								<Link
+									href="https://linkedin.com/in/janesmith"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<FaLinkedin />
+								</Link>,
+								<Link
+									href="https://github.com/janesmith"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<FaGithub />
+								</Link>,
+								<Link
+									href="https://twitter.com/janesmith"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<FaTwitter />
+								</Link>,
 							],
 						},
 						{
+							image_url: '/team_three.jpg',
 							name: 'David Kim',
 							position: 'Chief Data Scientist',
 							description:
 								'Dedicated to delivering exceptional customer experiences and tailored strategies',
 							social_links: [
-								'https://linkedin.com/in/janesmith',
-								'https://github.com/janesmith',
+								<Link
+									href="https://linkedin.com/in/janesmith"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<FaLinkedin />
+								</Link>,
+								<Link
+									href="https://github.com/janesmith"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<FaGithub />
+								</Link>,
+								<Link
+									href="https://twitter.com/janesmith"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<FaTwitter />
+								</Link>,
 							],
 						},
 					].map((member, index) => (
-						<div key={index} className="flex flex-col">
-							<span className="font-semibold">{member.name}</span>
-							<span className="text-sm">{member.position}</span>
-							<p className="text-[var(--less-light)] text-sm">
-								{member.description}
-							</p>
-							<div className="flex gap-4 mt-2">
-								{member.social_links.map((link, linkIndex) => (
-									<a
-										key={linkIndex}
-										href={link}
-										className="text-[var(--light)] hover:underline"
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										{link}
-									</a>
-								))}
+						<div key={index} className="flex h-full flex-col gap-3">
+							<div className="flex  h-fit items-start gap-4">
+								<div className="w-16 h-16 rounded-full overflow-hidden">
+									<Image
+										src={member.image_url}
+										alt={member.name}
+										width={100}
+										height={100}
+									/>
+								</div>
+								<div className="flex flex-col gap-2 text-[var(--light)]">
+									<div className="flex flex-col gap-1">
+										<span className="font-semibold">{member.name}</span>
+										<span className="font-bold">{member.position}</span>
+									</div>
+									<p className="text-[var(--dark)] text-sm">
+										{member.description}
+									</p>
+									<div className="flex gap-4">
+										{member.social_links.map((social, socialIndex) => (
+											<div key={socialIndex}>{social}</div>
+										))}
+									</div>
+								</div>
 							</div>
 						</div>
 					))}
