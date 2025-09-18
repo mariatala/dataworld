@@ -2,6 +2,7 @@ import { Cormorant_Garamond } from 'next/font/google';
 import { Cabin } from 'next/font/google';
 import { FaAngleRight } from 'react-icons/fa6';
 import Image from 'next/image';
+import SectionTitle from '@/components/SectionTitle';
 
 const cormorant = Cormorant_Garamond({
 	subsets: ['latin'],
@@ -12,6 +13,10 @@ const cabin = Cabin({
 	weight: ['400', '500', '600', '700'],
 });
 export default function Process() {
+	const title: string = 'Process';
+	const tagline: string = 'Our Seamless Workflow';
+	const sub_tagline: string =
+		'Discover how we streamline your data management.';
 	return (
 		<section
 			id="process"
@@ -19,15 +24,11 @@ export default function Process() {
 		>
 			<div className="mx-4 sm:mx-8 md:mx-12 lg:mx-16 flex flex-col justify-center items-center  md:w-3/4 lg:w-4/5 xl:w-2/3">
 				<div className="flex flex-col justify-center items-center gap-8 tex-center">
-					<h2 className="text-[var(--accent)]">Process</h2>
-
-					<h2
-						className={`${cormorant.className} text-2xl lg:text-5xl font-semibold text-center leading-none tracking-wide`}
-					>
-						{' '}
-						Our Seamless Workflow
-					</h2>
-					<p>Discover how we streamline your data management.</p>
+					<SectionTitle
+						title={title}
+						tagline={tagline}
+						sub_tagline={sub_tagline}
+					/>
 				</div>
 				<div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-16 ">
 					<div className="flex gap-8 border-1 border-[var(--light)] rounded-md col-span-2">

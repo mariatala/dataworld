@@ -1,7 +1,10 @@
 import { Cormorant_Garamond } from 'next/font/google';
 import { Cabin } from 'next/font/google';
 import { FaAngleRight } from 'react-icons/fa6';
-import Image from 'next/image';
+import { FaClipboardCheck } from 'react-icons/fa6';
+import { FaLightbulb } from 'react-icons/fa6';
+import { FaDatabase } from 'react-icons/fa6';
+import SectionTitle from '@/components/SectionTitle';
 
 const cormorant = Cormorant_Garamond({
 	subsets: ['latin'],
@@ -12,63 +15,45 @@ const cabin = Cabin({
 	weight: ['400', '500', '600', '700'],
 });
 export default function Features() {
+	const title: string = 'Benefits';
+	const tagline: string = 'Key Advantages of Our Services';
+	const sub_tagline: string =
+		'Unlock the full potential of your data with our innovative  solutions. Discover how our secure, scalable, and intelligent services empower your business to make data-driven decisions, streamline operations, and achieve sustainable growth. Experience the difference with tailored benefits designed to meet your unique  needs and drive success.';
 	return (
 		<section id="benefits" className="py-24 flex justify-center items-center">
 			<div className="mx-4 sm:mx-8 md:mx-12 lg:mx-16 flex flex-col justify-center items-center  md:w-3/4 lg:w-4/5 xl:w-2/3">
-				<div className="flex flex-col justify-center items-center gap-8 text-center">
-					<h2 className="text-[var(--accent)]">Benefits</h2>
+				<SectionTitle
+					title={title}
+					tagline={tagline}
+					sub_tagline={sub_tagline}
+				/>
 
-					<h2
-						className={`${cormorant.className} text-2xl lg:text-5xl font-semibold text-center leading-none tracking-wide`}
-					>
-						{' '}
-						Key Advantages of Our Services
-					</h2>
-					<p
-						className={`${cabin.className} text-sm  text-center max-w-3xl font-thin leading-relaxed tracking-wider text-[var(--less-light)]`}
-					>
-						Unlock the full potential of your data with our innovative
-						solutions. Discover how our secure, scalable, and intelligent
-						services empower your business to make data-driven decisions,
-						streamline operations, and achieve sustainable growth. Experience
-						the difference with tailored benefits designed to meet your unique
-						needs and drive success.
-					</p>
-				</div>
 				<div className="flex flex-col justify-center items-center">
 					<div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-16">
 						{[
 							{
-								logo: '/benefits_one.jpg',
-								logo_alt: 'Proven Results',
+								icon: <FaClipboardCheck />,
 								title: 'Proven Results for Your Business',
 								desc: 'Protect your data with our advanced security protocols and encryption methods.',
 							},
 							{
-								logo: '/benefits_two.jpg',
-								logo_alt: 'Tailored Solutions',
+								icon: <FaLightbulb />,
 								title: 'Tailored Solutions for Every Need',
 								desc: 'Our solutions grow with your business, ensuring seamless adaptability.',
 							},
 							{
-								logo: '/benefits_three.jpg',
-								logo_alt: 'Data Insights',
+								icon: <FaDatabase />,
 								title: 'Intelligent Data Insights',
 								desc: 'Optimize your data management costs with our affordable and effective services.',
 							},
 						].map((benefit, id) => (
 							<div
 								key={id}
-								className="flex flex-col justify-center  gap-4 items-center"
+								className="flex flex-col justify-center  gap-4 items-center h-40"
 							>
-								<Image
-									src={benefit.logo}
-									alt={benefit.logo_alt}
-									width={64}
-									height={64}
-									className="rounded-full"
-								/>
-								<div className="flex flex-col justify-center items-center gap-2">
+								{' '}
+								<div>{benefit.icon}</div>
+								<div className="flex flex-col justify-center items-center">
 									<h3
 										className={`${cormorant.className} text-3xl font-medium text-center leading-tight text-[var(--less-dark)]`}
 									>

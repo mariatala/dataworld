@@ -2,6 +2,7 @@ import { Cormorant_Garamond } from 'next/font/google';
 import { Cabin } from 'next/font/google';
 import { FaAngleRight } from 'react-icons/fa6';
 import Image from 'next/image';
+import SectionTitle from '@/components/SectionTitle';
 
 const cormorant = Cormorant_Garamond({
 	subsets: ['latin'],
@@ -12,23 +13,22 @@ const cabin = Cabin({
 	weight: ['400', '500', '600', '700'],
 });
 export default function Features() {
+	const title: string = 'Features';
+	const tagline: string = 'Core Features Overview';
+	const sub_tagline: string =
+		'Empower Our Business with our Cutting-Edge Solutions';
+
 	return (
 		<section
 			id="features"
 			className=" bg-gray-200  my-24  py-24 flex justify-center items-center"
 		>
 			<div className="mx-4 sm:mx-8 md:mx-12 lg:mx-16 flex flex-col justify-center items-center  md:w-3/4 lg:w-4/5 xl:w-2/3">
-				<div className="flex flex-col justify-center items-center gap-8 tex-center">
-					<h2 className="text-[var(--accent)]">Features</h2>
-
-					<h2
-						className={`${cormorant.className} text-2xl lg:text-5xl font-semibold text-center leading-none tracking-wide`}
-					>
-						{' '}
-						Core Features Overview
-					</h2>
-					<p>Empower Our Business with our Cutting-Edge Solutions</p>
-				</div>
+				<SectionTitle
+					title={title}
+					tagline={tagline}
+					sub_tagline={sub_tagline}
+				/>
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-16">
 					<div className="flex flex-col gap-4">
 						<div className="flex gap-8 border-1 border-[var(--light)] rounded-md">
