@@ -13,13 +13,14 @@ export default function Navigation() {
 				</Link>
 				<nav className='hidden md:block'>
 					<ul className="flex flex-col items-start md:flex-row gap-8 imd:items-center font-semibold uppercase text-xs tracking-widest">
-						<li className=" hover:underline decoration-[var(--accent)] underline-offset-[4px] decoration-2 transition-all duration-500 ease-in-out">
-							{' '}
-							<Link href="/">Home</Link>{' '}
-						</li>
+						
 						<li className="hover:underline decoration-[var(--accent)] underline-offset-[4px] decoration-2 transition-all duration-500 ease-in-out">
 							{' '}
 							<Link href="#about">About</Link>{' '}
+						</li>
+						<li className="hover:underline decoration-[var(--accent)] underline-offset-[4px] decoration-2 transition-all duration-500 ease-in-out">
+							{' '}
+							<Link href="#features">Features</Link>{' '}
 						</li>
 
 						<li className="hover:underline decoration-[var(--accent)] underline-offset-[4px] decoration-2 transition-all duration-500 ease-in-out">

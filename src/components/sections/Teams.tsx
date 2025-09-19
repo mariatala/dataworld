@@ -14,13 +14,13 @@ const cabin = Cabin({
 });
 export default function Teams() {
 	return (
-		<section className=" bg-[var(--accent)] py-16 h-dvh flex  flex-col justify-center items-center">
-			<div className="flex flex-col md:flex-row justify-between md:gap-8 lg:16 xl:24 items-center">
-				<div className="flex flex-col h-full justify-start items-start text-left gap-8 text-[var(--light)] pr-0 md:pr-8 lg:pr-24 px-8 md:px-16 pt-10">
+		<section className=" bg-[var(--accent)] py-24 md:py-12  flex justify-center items-center h-screen md:h-[80vh] ">
+			<div className="h-full mx-4 sm:mx-8 md:mx-12 lg:mx-16 flex flex-col md:flex-row justify-center md:justify-between md:gap-8 items-center md:items-start md:pt-16 lg:pt-24 md:w-4/5">
+				<div className="flex  h-full flex-col justify-start items-start text-left gap-8 text-[var(--light)]">
 					<h2 className="">Team</h2>
 
 					<h2
-						className={`${cormorant.className} text-2xl lg:text-5xl font-semibold leading-none tracking-wide`}
+						className={`${cormorant.className} text-3xl md:text-4xl lg:text-5xl  font-semibold leading-none tracking-wide`}
 					>
 						{' '}
 						Our Professional Team
@@ -34,7 +34,7 @@ export default function Teams() {
 						Open Position
 					</button>
 				</div>
-				<div className="mt-16 md:mt-0 flex flex-col gap-8  md:gap-16 px-4 sm:px-8">
+				<div className="mt-16 md:mt-0 flex flex-col gap-8 md:gap-16">
 					{[
 						{
 							image_url: '/team_one.jpg',

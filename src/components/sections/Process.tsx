@@ -22,7 +22,7 @@ export default function Process() {
 			id="process"
 			className=" bg-gray-200 py-24 flex justify-center items-center"
 		>
-			<div className="mx-4 sm:mx-8 md:mx-12 lg:mx-16 flex flex-col justify-center items-center  md:w-3/4 lg:w-4/5 xl:w-2/3">
+			<div className="mx-4 sm:mx-8 md:mx-12 lg:mx-16 flex flex-col justify-center items-center  md:w-3/4 lg:w-4/5">
 				<div className="flex flex-col justify-center items-center gap-8 tex-center">
 					<SectionTitle
 						title={title}
@@ -31,7 +31,7 @@ export default function Process() {
 					/>
 				</div>
 				<div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-16 ">
-					<div className="flex gap-8 border-1 border-[var(--light)] rounded-md col-span-2">
+					<div className="flex gap-8 border-1 border-[var(--light)] rounded-md lg:col-span-2">
 						<div className="w-1/2 h-full rounded-r-md ">
 							<Image
 								src="/features.jpg"

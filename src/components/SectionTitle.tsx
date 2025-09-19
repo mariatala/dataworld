@@ -23,7 +23,7 @@ export default function SectionTitle({
 		<div className="flex flex-col justify-center items-center gap-8 tex-center">
 			<h2 className="text-[var(--accent)]">{title}</h2>
 			<h2
-				className={`${cormorant.className} text-2xl lg:text-5xl font-semibold text-center leading-none tracking-wide`}
+				className={`${cormorant.className} text-3xl md:text-4xl lg:text-5xl font-semibold text-center leading-none tracking-wide`}
 			>
 				{' '}
 				{tagline}

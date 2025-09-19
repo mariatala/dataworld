@@ -1,3 +1,5 @@
+import { LuBrainCircuit } from 'react-icons/lu';
+import { FaCartPlus } from "react-icons/fa6";
 import { Cormorant } from 'next/font/google';
 import Image from 'next/image';
 const cormorant = Cormorant({
@@ -9,11 +11,11 @@ export default function Testimonials() {
 	return (
 		<section
 			id="testimonials"
-			className="flex justify-center items-center pb-16"
+			className="py-24 flex justify-center items-center"
 		>
-			<div className="mx-4 sm:mx-8 md:mx-12 lg:mx-16 flex flex-col justify-center items-start ">
+			<div className="mx-4 sm:mx-8 md:mx-12 lg:mx-16 flex flex-col justify-center items-center  md:w-3/4 lg:w-4/5">
 				<h2
-					className={`${cormorant.className} text-2xl lg:text-5xl font-semibold text-left leading-none tracking-wide`}
+					className={`${cormorant.className}text-3xl md:text-4xl lg:text-5xl font-semibold text-left leading-none tracking-wide`}
 				>
 					{' '}
 					Customer Testimonials
@@ -30,7 +32,7 @@ export default function Testimonials() {
 							feedback:
 								' We DataWorld transformed our business with their innovative data solutions. Highly recommend!',
 							project: 'E-commerce Analytics Platform',
-							logo: '/company1.png',
+							icon: <FaCartPlus />,
 						},
 						{
 							id: 2,
@@ -41,7 +43,7 @@ export default function Testimonials() {
 							feedback:
 								'Professional and reliable service. Our data management has never been better.',
 							project: 'AI-Powered Chatbot',
-							logo: '/company2.png',
+							icon: <LuBrainCircuit />
 						},
 						// {
 						// 	id: 3,
@@ -54,6 +56,7 @@ export default function Testimonials() {
 						// 	project: 'Startup Growth Dashboard',
 						// 	logo: '/company3.png',
 						// },
+						
 					].map((testimonial, id) => {
 						return (
 							<div className="flex flex-col py-4 px-8" key={id}>
@@ -91,13 +94,7 @@ export default function Testimonials() {
 									</div>
 									<div className="flex flex-col gap-1 md:border-l-2 border-l-0 border-[var(--dark)] md:pl-4 ml-4">
 										<p className="text-sm">Project: {testimonial.project}</p>
-										<Image
-											src={testimonial.logo}
-											alt={testimonial.name}
-											height={30}
-											width={150}
-											objectFit="none"
-										/>
+										<div>{testimonial.icon}</div>
 									</div>
 								</div>
 							</div>

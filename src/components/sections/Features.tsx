@@ -3,6 +3,7 @@ import { Cabin } from 'next/font/google';
 import { FaAngleRight } from 'react-icons/fa6';
 import Image from 'next/image';
 import SectionTitle from '@/components/SectionTitle';
+import SubSectionTitle from '@/components/SubSectionTitle';
 
 const cormorant = Cormorant_Garamond({
 	subsets: ['latin'],
@@ -21,7 +22,7 @@ export default function Features() {
 	return (
 		<section
 			id="features"
-			className=" bg-gray-200  my-24  py-24 flex justify-center items-center"
+			className=" bg-gray-200  py-24 flex justify-center items-center"
 		>
 			<div className="mx-4 sm:mx-8 md:mx-12 lg:mx-16 flex flex-col justify-center items-center  md:w-3/4 lg:w-4/5 xl:w-2/3">
 				<SectionTitle
@@ -31,29 +32,16 @@ export default function Features() {
 				/>
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-16">
 					<div className="flex flex-col gap-4">
-						<div className="flex gap-8 border-1 border-[var(--light)] rounded-md">
+						<div className="flex border-1 gap-2 border-[var(--light)] rounded-md">
 							<div className="flex w-1/2 flex-col gap-4 py-8 px-4 rounded-md">
 								{' '}
-								<h3
-									className={`${cormorant.className} text-lg font-semibold text-[var(--less-light)]`}
-								>
-									Tagline
-								</h3>
-								<h4
-									className={`${cormorant.className} text-xl font-medium leading-6`}
-								>
-									Data Storage Solutions
-								</h4>
-								<p
-									className={`${cabin.className} text-sm  font-thin leading-relaxed tracking-wider text-[var(--less-light)]`}
-								>
-									Our data storage solutions provide secure and scalable options
-									for your business needs.
-								</p>
-								<button className="group button-data w-fit hover:translate-x-0.5 transition-all duration-300 text-[var(--less-light)]">
-									Explore{' '}
-									<FaAngleRight className="inline-block  group-hover:translate-x-1 transition-transform duration-300" />
-								</button>
+								<SubSectionTitle
+									subTagline="Tagline"
+									subTitle="Data Storage Solutions"
+									description="Our data storage solutions provide secure and scalable options for your business needs.."
+									buttonText="Explore"
+									linkUrl="#DataStorage"
+								/>
 							</div>
 							<div className="w-1/2 h-full rounded-r-md ">
 								<Image
@@ -66,38 +54,23 @@ export default function Features() {
 							</div>
 						</div>
 						<div className=" flex gap-4">
-							<div className="flex flex-col gap-4  border-1 border-[var(--light)] rounded-md p-4">
-								<h4
-									className={`${cormorant.className} text-xl font-medium leading-6`}
-								>
-									Advanced Data Analytics
-								</h4>
-								<p
-									className={`${cabin.className} text-sm  font-thin leading-relaxed tracking-wider text-[var(--less-light)]`}
-								>
-									Designed to provide actionable insights and drive business
-									growth.
-								</p>
-								<button className="group button-data w-fit hover:translate-x-0.5 transition-all duration-300 text-[var(--less-light)]">
-									Explore{' '}
-									<FaAngleRight className="inline-block  group-hover:translate-x-1 transition-transform duration-300" />
-								</button>
-							</div>
 							<div className="flex flex-col gap-4 border-1 border-[var(--light)] rounded-md p-4">
-								<h4
-									className={`${cormorant.className} text-xl font-medium leading-6`}
-								>
-									Robust Data Security
-								</h4>
-								<p
-									className={`${cabin.className} text-sm  font-thin leading-relaxed tracking-wider text-[var(--less-light)]`}
-								>
-									Comprehensive protection and integrity of your data
-								</p>
-								<button className="group button-data w-fit hover:translate-x-0.5 transition-all duration-300 text-[var(--less-light)]">
-									Explore{' '}
-									<FaAngleRight className="inline-block  group-hover:translate-x-1 transition-transform duration-300" />
-								</button>
+								<SubSectionTitle
+									subTitle="Advanced Data Analytics"
+									description="Designed to provide actionable insights and drive growth."
+									buttonText="Explore"
+									linkUrl="#DataAnalytics"
+								/>
+							</div>
+
+							<div className="flex flex-col gap-4 border-1 border-[var(--light)] rounded-md p-4">
+								<SubSectionTitle
+									subTitle="Robust Data Security"
+									description="
+									Comprehensive protection and integrity of your data."
+									buttonText="Explore"
+									linkUrl="#DataSecurity"
+								/>
 							</div>
 						</div>
 					</div>
@@ -105,20 +78,14 @@ export default function Features() {
 					<div className="flex flex-col gap-4 border-1 border-[var(--light)] rounded-md">
 						<div className="flex flex-col gap-4 p-4">
 							{' '}
-							<h3 className={`${cormorant.className} text-lg font-semibold`}>
-								Tagline
-							</h3>
-							<h4
-								className={`${cormorant.className} text-3xl font-medium leading-tight`}
-							>
-								Scalable Solutions
-							</h4>
-							<p
-								className={`${cabin.className} text-sm  font-thin leading-relaxed tracking-wider text-[var(--less-light)]`}
-							>
-								Our solutions are designed to scale with your business, ensuring
-								seamless growth and adaptability.
-							</p>
+							<SubSectionTitle
+								subTitleClass="text-3xl"
+								subTagline="Tagline"
+								subTitle="Scalable Solutions"
+								description="Our solutions are designed to scale with your business, ensuring seamless growth and adaptability."
+								buttonText="Explore"
+								linkUrl="#DataSecurity"
+							/>
 							<div className="flex gap-8 mt-4">
 								<button className=" border-1 rounded-sm border-[var(--accent)] px-4 py-1 w-fit hover:bg-[var(--less-dark)] hover:text-[var(--light)] transition-colors duration-500">
 									Get Started

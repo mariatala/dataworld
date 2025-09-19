@@ -21,7 +21,7 @@ export default function Features() {
 		'Unlock the full potential of your data with our innovative  solutions. Discover how our secure, scalable, and intelligent services empower your business to make data-driven decisions, streamline operations, and achieve sustainable growth. Experience the difference with tailored benefits designed to meet your unique  needs and drive success.';
 	return (
 		<section id="benefits" className="py-24 flex justify-center items-center">
-			<div className="mx-4 sm:mx-8 md:mx-12 lg:mx-16 flex flex-col justify-center items-center  md:w-3/4 lg:w-4/5 xl:w-2/3">
+			<div className="mx-4 sm:mx-8 md:mx-12 lg:mx-16 flex flex-col justify-center items-center  md:w-3/4 lg:w-4/5">
 				<SectionTitle
 					title={title}
 					tagline={tagline}

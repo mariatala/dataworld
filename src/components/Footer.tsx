@@ -1,47 +1,69 @@
 import Link from 'next/link';
-import { FaA, FaAnglesRight } from 'react-icons/fa6';
+import {
+	FaFacebook,
+	FaInstagram,
+	FaXTwitter,
+	FaLinkedin,
+	FaYoutube,
+} from 'react-icons/fa6';
+
 export default function Footer() {
 	return (
-		<footer className="mx">
-			<div className="flex gap-10 mx-0 md:mx-8 lg:mx-16 py-16">
-				<div className="about flex-1">
-					<h2 className="text-3xl font-bold text-amber-500 flex items-center gap-2">
-						<FaA className="rotate-90" />
-						DataWorld
-					</h2>
-					<p className="mt-4">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-						quisquam.
-					</p>
-				</div>
-				<div className="policy flex-1">
-					<h2 className="text-3xl font-bold text-amber-500 flex items-center gap-2">
-						<FaAnglesRight className="rotate-90" />
-						Privacy Policy
-					</h2>
-					<p className="mt-4">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-						quisquam.
-					</p>
-				</div>
-				<div className="quick-links flex-1">
-					<h2 className="text-3xl font-bold text-amber-500 flex items-center gap-2">
-						<FaAnglesRight className="rotate-90" />
-						Quick Links
-					</h2>
-					<p className="mt-4">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-						quisquam.
-					</p>
-				</div>
+		<footer className=" bg-[var(--accent)] py-24 md:py-12  flex justify-center items-center ">
+			<div className="mx-4 sm:mx-8 md:mx-12 lg:mx-16 flex flex-col justify-center items-center  md:w-3/4 lg:w-4/5">
+				<div className=" w-full flex flex-col md:flex-row justify-center sm:justify-between  items-center border-b-1 border-b-[var(--light)] py-12">
+					<div className="logo">
+						<Link href="/">
+							<h1
+								className={` w-fit text-lg p-2 border-1 border-solid border-[var(--light)] tracking-wide uppercase font-semibold text-[var(--light)] hover:bg-[var(--accent)] hover:border-[var(--accent)] transition-all duration-500 ease-in-out`}
+							>
+								DataWorld
+							</h1>
+						</Link>
+					</div>
 
-			</div>
+					<nav className="flex flex-col md:flex-row gap-4 font-semibold text-[var(--light)] tracking-wide">
+						<Link href="/#" target="_blank" rel="noopener noreferrer">
+							Services
+						</Link>
+						<Link href="/#" target="_blank" rel="noopener noreferrer">
+							Solutions
+						</Link>
+						<Link href="/#" target="_blank" rel="noopener noreferrer">
+							Insights
+						</Link>
+						<Link href="/#" target="_blank" rel="noopener noreferrer">
+							Careers
+						</Link>
+						<Link href="/#" target="_blank" rel="noopener noreferrer">
+							Contact
+						</Link>
+					</nav>
 
-			<div className="footer-bottom flex justify-center items-center py-4 bg-gray-900 text-white">
-				<p>
-					Copyright &copy; {new Date().getFullYear()} All rights reserved |
-					DataWorld
-				</p>
+					<div className="footer-socials flex gap-4 w-fit p-4 text-[var(--light)] text-xl">
+						<FaFacebook />
+						<FaInstagram />
+						<FaXTwitter />
+						<FaLinkedin />
+						<FaYoutube />
+					</div>
+				</div>
+				<div className="py-8 copyright flex flex-col  justify-center md:flex-row gap-8 items-center w-9/12">
+					<p className="text-[var(--light)]">
+						&copy;{new Date().getFullYear()} Dataworld. All rights reserved.
+					</p>
+					<div className="footer_links text-sm text-[var(--light)] flex gap-8">
+						<Link href="/#" target="_blank" rel="noopener noreferrer">
+							Privacy Policy
+						</Link>
+						<Link href="/#" target="_blank" rel="noopener noreferrer">
+							Terms of service
+						</Link>
+						<Link href="/#" target="_blank" rel="noopener noreferrer">
+							Cookie settings
+						</Link>
+					</div>
+				</div>
 			</div>
 		</footer>
 	);

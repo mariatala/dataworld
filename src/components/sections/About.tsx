@@ -19,11 +19,8 @@ export default function About() {
 		'At DataWorld, we understand that effective data management is crucial for business success. Our comprehensive solutions are designed to help you optimize your data processes, improve accessibility, and drive informed decision-making.';
 
 	return (
-		<section
-			id="about"
-			className="mx-4 sm:mx-8 md:mx-12 lg:mx-16 my-24 flex flex-col justify-center items-center"
-		>
-			<div className="mx-4 sm:mx-8 md:mx-12 lg:mx-16 flex flex-col justify-center items-center  md:w-3/4 lg:w-4/5 xl:w-2/3">
+		<section id="about" className="py-24 flex justify-center items-center">
+			<div className="mx-4 sm:mx-8 md:mx-12 lg:mx-16 flex flex-col justify-center items-center  md:w-3/4 lg:w-4/5">
 				<SectionTitle
 					title={title}
 					tagline={tagline}
